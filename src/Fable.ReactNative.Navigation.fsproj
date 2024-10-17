@@ -3,8 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>Fable.ReactNative.Navigation</PackageId>
+    <FablePackageType>library</FablePackageType>
     <Version>0.0.5-alpha</Version>
-    <PackageTags>Fable;react-native;@react-natvigation/native;Fsharp;FSharp Fable ReactNative;</PackageTags>
+    <PackageTags>Fable;react-native;@react-natvigation/native;Fsharp;FSharp Fable ReactNative;fable-javascript</PackageTags>
     <Description>Fable bindings for @react-navigation/native, @react-navigation/stack, @react-navigation/bottom-tabs and @react-navigation/drawer</Description>
     <PackageProjectUrl>https://github.com/martinmoec/Fable.ReactNative.Navigation</PackageProjectUrl>
     <RepositoryUrl>https://github.com/martinmoec/Fable.ReactNative.Navigation</RepositoryUrl>
@@ -22,6 +23,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="3.1.5" />
+    <PackageReference Include="Fable.Package.SDK" Version="1.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Fable.React" Version="5.3.6" />
     <PackageReference Include="Fable.React.Native" Version="2.3.1" />
   </ItemGroup>
