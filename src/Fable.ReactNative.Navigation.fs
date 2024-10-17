@@ -72,7 +72,7 @@ let popMultipleScreens (navigation : Types.INavigation<_>) (numScreens : int) =
 let inline jumpTo (navigation : Types.INavigation<_>) (endpoint : string) (data : 'a) =
     navigation.navigation?jumpTo(endpoint, data);
 
-let navigationContainer props children = 
+let navigationContainer (props: _ seq) children = 
     ReactBindings.React.createElement(Types.Globals.NavigationContainer, keyValueList CaseRules.LowerFirst props, children)
 
 module Stack =
@@ -170,7 +170,7 @@ module Stack =
     
     type ScreenProps =
         | InitialParams of obj
-        static member Options (x : seq<ScreenOptions>) =
+        static member inline Options (x : seq<ScreenOptions>) =
             !!("options", keyValueList CaseRules.LowerFirst x)
 
     [<StringEnum>]
@@ -275,7 +275,7 @@ module Tab =
 
     type ScreenProps = 
         | InitialParams of obj
-        static member Options (x : seq<ScreenOptions>) =
+        static member inline Options (x : seq<ScreenOptions>) =
             !!("options", keyValueList CaseRules.LowerFirst x)
 
     type ITabNavigator =
@@ -357,7 +357,7 @@ module Drawer =
 
     type ScreenProps = 
         | InitialParams of obj
-        static member Options (x : seq<ScreenOptions>) =
+        static member inline Options (x : seq<ScreenOptions>) =
             !!("options", keyValueList CaseRules.LowerFirst x)
     
     type DrawerContentOptions =
@@ -466,12 +466,12 @@ module Drawer =
         | InactiveBackgroundColor   of string
         | Icon                      of (DrawerItemIconProps -> ReactElement)
 
-    let drawerItem (props : DrawerItemProps list) =
+    let drawerItem (props : DrawerItemProps seq) =
         ReactBindings.React.createElement(Globals.DrawerItem, keyValueList CaseRules.LowerFirst props, [])
         
 module Helpers = 
     type AppState = {
-        ``render`` : unit -> Fable.React.ReactElement
+        ``render`` : unit -> ReactElement
         ``setState`` : AppState -> unit
     }
 

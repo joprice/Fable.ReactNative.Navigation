@@ -27,8 +27,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Fable.React" Version="5.3.6" />
     <PackageReference Include="Fable.React.Native" Version="2.3.1" />
+    <PackageReference Include="Fable.React.Types" Version="18.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="*.fsproj; *.fs" PackagePath="fable\" />
